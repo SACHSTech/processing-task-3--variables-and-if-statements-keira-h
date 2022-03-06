@@ -21,16 +21,18 @@ public class Sketch extends PApplet {
    * values here i.e background, stroke, fill etc.
    */
   public void setup() {
-    background(210, 255, 173);
+    background(207, 244, 250);
   }
 
   /**
    * Called repeatedly, anything drawn to the screen goes here
    */
   public void draw() {
-	  
-	// sample code, delete this stuff
-    // Drawing grass 
+
+  // Variables 
+    
+    
+	// Drawing grass 
     fill(163, 230, 115);
     rect(width/-100, height/((float)100/89), width*(float)1.02, height/((float)20/3));
   
