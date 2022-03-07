@@ -26,7 +26,7 @@ public class Sketch extends PApplet {
     float pointX = random(0, 400);
     float pointY = random(0, 400);
     
-    /*if (pointX <= 100 || pointY <= 100) {
+    if (pointX <= 100 || pointY <= 100) {
       // Creating background
       background(255, 255, 255);
 
@@ -78,16 +78,16 @@ public class Sketch extends PApplet {
 
       // Window glass
       fill(random(255), random(255), random(255));
-      rect(pointX - 218, pointY - 128, 15, 14);
+      rect(pointX - 218, pointY - 128, 15, 13);
 
       fill(random(255), random(255), random(255));
-      rect(pointX - 200, pointY - 128, 15, 14);
+      rect(pointX - 200, pointY - 128, 15, 13);
 
       fill(random(255), random(255), random(255));
-      rect(pointX - 218, pointY - 113, 15, 14);
+      rect(pointX - 218, pointY - 113, 15, 13);
 
       fill(random(255), random(255), random(255));
-      rect(pointX - 200, pointY - 113, 15, 14);
+      rect(pointX - 200, pointY - 113, 15, 13);
 
       // Door 
       fill(random(255), random(255), random(255));
@@ -100,7 +100,7 @@ public class Sketch extends PApplet {
       // Roof
       fill(random(255), random(255), random(255));
       triangle(pointX - 255, pointY - 180, pointX - 152, pointY - 280, pointX - 50, pointY - 180);
-    }*/
+    }
   }
 
   /**
@@ -108,15 +108,16 @@ public class Sketch extends PApplet {
    */
   public void draw() {
   
-  // Time
+  // Time variables
     int sec = second(); 
     int min = minute(); 
-    int hour = hour();  
-    string time = hour + ":" + min + ":" + sec; 
-    
+    int hour = hour() - 5;  
+    String time = hour + ":" + min + ":" + sec; 
+
+  // Time output
     textSize(25);
     fill(0, 0, 0);
-    text(time, 50, 375);
+    text(time, 200, 450);
     noLoop();
     
   }
