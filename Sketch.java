@@ -22,78 +22,85 @@ public class Sketch extends PApplet {
    */
   public void setup() {
 
-    // Variables 
+    // Creating Varibales 
     float pointX = random(0, 400);
     float pointY = random(0, 400);
-    float pointWidth = random (350);
-    float pointHeight = random (240);
-
+    float pointWidth = random (180);
+    float pointHeight = random (220);
+    
     if (pointX <= 100 || pointY <= 100) {
       background(random(255));
 
       // House base
       fill(random(255), random(255), random(255));
-      rect(pointX, pointY, 350, 240);
+      rect(pointX - 240, pointY - 180, 175, 120);
 
       // Window
       fill(random(255), random(255), random(255));
-      rect(pointX - 275, pointY - 90, 75, 65);
+      rect(pointX - 220, pointY - 130, 38, 33);
 
       // Window glass
       fill(random(255), random(255), random(255));
-      rect(pointX - 270, pointY - 85, pointWidth - 30, 25);
+      rect(pointX - 218, pointY - 128, 15, 13);
 
       fill(random(255), random(255), random(255));
-      rect(pointX - 235, pointY - 85, 30, 25);
+      rect(pointX - 200, pointY - 128, 15, 13);
 
       fill(random(255), random(255), random(255));
-      rect(pointX - 270, pointY - 55, 30, 25);
+      rect(pointX - 218, pointY - 113, 15, 13);
 
       fill(random(255), random(255), random(255));
-      rect(pointX - 235, pointY - 55, 30, 25);
+      rect(pointX - 200, pointY - 113, 15, 13);
 
       // Door 
       fill(random(255), random(255), random(255));
-      rect(pointX - 105, pointY - 100, 90, 160);
+      rect(pointX - 135, pointY - 140, 45, 80);
 
       // Door knob
       fill(random(255), random(255), random(255));
-      rect(pointX - 90, pointY - 5, 20, 20);
-      
+      ellipse(pointX - 127, pointY - 95, 10, 10);
+
+      // Roof
+      fill(random(255), random(255), random(255));
+      triangle(pointX - 255, pointY - 180, pointX - 152, pointY - 280, pointX - 50, pointY - 180);
     }  
-    else if (pointX <= 200 || pointY <= 200) {
-      background(207, 244, 250);
+    
+    else {
+      background(random(255));
 
       // House base
       fill(random(255), random(255), random(255));
-      rect(pointX, pointY, 350, 240);
+      rect(pointX - 240, pointY - 180, 175, 120);
 
       // Window
       fill(random(255), random(255), random(255));
-      rect(pointX - 275, pointY - 90, 75, 65);
+      rect(pointX - 220, pointY - 130, 38, 33);
 
       // Window glass
       fill(random(255), random(255), random(255));
-      rect(pointX - 270, pointY - 85, pointWidth - 30, 25);
+      rect(pointX - 218, pointY - 128, 15, 13);
 
       fill(random(255), random(255), random(255));
-      rect(pointX - 235, pointY - 85, 30, 25);
+      rect(pointX - 200, pointY - 128, 15, 13);
 
       fill(random(255), random(255), random(255));
-      rect(pointX - 270, pointY - 55, 30, 25);
+      rect(pointX - 218, pointY - 113, 15, 13);
 
       fill(random(255), random(255), random(255));
-      rect(pointX - 235, pointY - 55, 30, 25);
+      rect(pointX - 200, pointY - 113, 15, 13);
 
       // Door 
       fill(random(255), random(255), random(255));
-      rect(pointX - 105, pointY - 100, 90, 160);
+      rect(pointX - 135, pointY - 140, 45, 80);
 
       // Door knob
       fill(random(255), random(255), random(255));
-      rect(pointX - 90, pointY - 5, 20, 20);
+      ellipse(pointX - 127, pointY - 95, 10, 10);
+
+      // Roof
+      fill(random(255), random(255), random(255));
+      triangle(pointX - 255, pointY - 180, pointX - 152, pointY - 280, pointX - 50, pointY - 180);
     }
-    
   }
 
   /**
@@ -102,13 +109,15 @@ public class Sketch extends PApplet {
   public void draw() {
   
   // Time
-    int s = second(); 
-    int m = minute(); 
-    int h = hour();  
-    //line(s, 0, s, 33);
-    //line(m, 33, m, 66);
-    //line(h, 66, h, 100);
+    int sec = second(); 
+    int min = minute(); 
+    int hour = hour();  
+    String time = hour + ":" + min + ":" + sec; 
+    
+    //textSize(50);
+    //fill(255, 255, 255);
+    //text(time, 48, 240);
+
+    noLoop();
   }
-  
-  // define other methods down here.
 }
