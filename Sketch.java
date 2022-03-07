@@ -21,15 +21,14 @@ public class Sketch extends PApplet {
    * values here i.e background, stroke, fill etc.
    */
   public void setup() {
-
+    
     // Creating Varibales 
     float pointX = random(0, 400);
     float pointY = random(0, 400);
-    float pointWidth = random (180);
-    float pointHeight = random (220);
     
-    if (pointX <= 100 || pointY <= 100) {
-      background(random(255));
+    /*if (pointX <= 100 || pointY <= 100) {
+      // Creating background
+      background(255, 255, 255);
 
       // House base
       fill(random(255), random(255), random(255));
@@ -66,28 +65,29 @@ public class Sketch extends PApplet {
     }  
     
     else {
-      background(random(255));
-
+      // Creating background
+      background(255, 255, 255);
+      
       // House base
       fill(random(255), random(255), random(255));
       rect(pointX - 240, pointY - 180, 175, 120);
 
       // Window
       fill(random(255), random(255), random(255));
-      rect(pointX - 220, pointY - 130, 38, 33);
+      rect(pointX - 220, pointY - 130, 38, 34);
 
       // Window glass
       fill(random(255), random(255), random(255));
-      rect(pointX - 218, pointY - 128, 15, 13);
+      rect(pointX - 218, pointY - 128, 15, 14);
 
       fill(random(255), random(255), random(255));
-      rect(pointX - 200, pointY - 128, 15, 13);
+      rect(pointX - 200, pointY - 128, 15, 14);
 
       fill(random(255), random(255), random(255));
-      rect(pointX - 218, pointY - 113, 15, 13);
+      rect(pointX - 218, pointY - 113, 15, 14);
 
       fill(random(255), random(255), random(255));
-      rect(pointX - 200, pointY - 113, 15, 13);
+      rect(pointX - 200, pointY - 113, 15, 14);
 
       // Door 
       fill(random(255), random(255), random(255));
@@ -100,7 +100,7 @@ public class Sketch extends PApplet {
       // Roof
       fill(random(255), random(255), random(255));
       triangle(pointX - 255, pointY - 180, pointX - 152, pointY - 280, pointX - 50, pointY - 180);
-    }
+    }*/
   }
 
   /**
@@ -112,12 +112,12 @@ public class Sketch extends PApplet {
     int sec = second(); 
     int min = minute(); 
     int hour = hour();  
-    String time = hour + ":" + min + ":" + sec; 
+    string time = hour + ":" + min + ":" + sec; 
     
-    //textSize(50);
-    //fill(255, 255, 255);
-    //text(time, 48, 240);
-
+    textSize(25);
+    fill(0, 0, 0);
+    text(time, 50, 375);
     noLoop();
+    
   }
 }
