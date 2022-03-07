@@ -13,7 +13,7 @@ public class Sketch extends PApplet {
    */
   public void settings() {
 	// put your size call here
-    size(400, 400);
+    size(500, 500);
   }
 
   /** 
@@ -21,61 +21,93 @@ public class Sketch extends PApplet {
    * values here i.e background, stroke, fill etc.
    */
   public void setup() {
-    background(207, 244, 250);
+
+    // Variables 
+    float pointX = random(0, 400);
+    float pointY = random(0, 400);
+    float pointWidth = random (350);
+    float pointHeight = random (240);
+
+    if (pointX <= 100 || pointY <= 100) {
+      background(random(255));
+
+      // House base
+      fill(random(255), random(255), random(255));
+      rect(pointX, pointY, 350, 240);
+
+      // Window
+      fill(random(255), random(255), random(255));
+      rect(pointX - 275, pointY - 90, 75, 65);
+
+      // Window glass
+      fill(random(255), random(255), random(255));
+      rect(pointX - 270, pointY - 85, pointWidth - 30, 25);
+
+      fill(random(255), random(255), random(255));
+      rect(pointX - 235, pointY - 85, 30, 25);
+
+      fill(random(255), random(255), random(255));
+      rect(pointX - 270, pointY - 55, 30, 25);
+
+      fill(random(255), random(255), random(255));
+      rect(pointX - 235, pointY - 55, 30, 25);
+
+      // Door 
+      fill(random(255), random(255), random(255));
+      rect(pointX - 105, pointY - 100, 90, 160);
+
+      // Door knob
+      fill(random(255), random(255), random(255));
+      rect(pointX - 90, pointY - 5, 20, 20);
+      
+    }  
+    else if (pointX <= 200 || pointY <= 200) {
+      background(207, 244, 250);
+
+      // House base
+      fill(random(255), random(255), random(255));
+      rect(pointX, pointY, 350, 240);
+
+      // Window
+      fill(random(255), random(255), random(255));
+      rect(pointX - 275, pointY - 90, 75, 65);
+
+      // Window glass
+      fill(random(255), random(255), random(255));
+      rect(pointX - 270, pointY - 85, pointWidth - 30, 25);
+
+      fill(random(255), random(255), random(255));
+      rect(pointX - 235, pointY - 85, 30, 25);
+
+      fill(random(255), random(255), random(255));
+      rect(pointX - 270, pointY - 55, 30, 25);
+
+      fill(random(255), random(255), random(255));
+      rect(pointX - 235, pointY - 55, 30, 25);
+
+      // Door 
+      fill(random(255), random(255), random(255));
+      rect(pointX - 105, pointY - 100, 90, 160);
+
+      // Door knob
+      fill(random(255), random(255), random(255));
+      rect(pointX - 90, pointY - 5, 20, 20);
+    }
+    
   }
 
   /**
    * Called repeatedly, anything drawn to the screen goes here
    */
   public void draw() {
-
-  // Variables 
-    
-    
-	// Drawing grass 
-    fill(163, 230, 115);
-    rect(width/-100, height/((float)100/89), width*(float)1.02, height/((float)20/3));
   
-  // Drawing pathway
-    fill(189, 189, 189);
-    quad(width/(float)1.25, height, width/((float)100/77), height/((float)25/23), width/((float)100/59), height/((float)25/23), width/((float)25/14), height);
-  
-  // Drawing house base
-    fill(242, 234, 203);
-    rect(width/(float)6.25, height/((float)25/11), width/((float)10/7), height/((float)25/12)); 
-
-  // Drawing window base
-    fill(0, 0, 0);
-    rect(width/4, height/((float)50/31), width/((float)20/3), height/((float)100/13)); 
-
-  // Drawing window glass
-    fill(255, 255, 255);
-    rect(width/((float)50/13), height/((float)100/63), width/((float)50/3), height/20);
-
-    fill(255, 255, 255);
-    rect(width/((float)100/33), height/((float)100/63), width/((float)50/3), height/20);
-
-    fill(255, 255, 255);
-    rect(width/((float)50/13), height/((float)100/69), width/((float)50/3), height/20);
-
-    fill(255, 255, 255);
-    rect(width/((float)100/33), height/((float)100/69), width/((float)50/3), height/20);  
-  
-  // Drawing door 
-    fill(156, 98, 17);
-    rect(width/((float)100/59), height/((float)5/3), width/((float)50/9), height/(float)3.125);
-
-  // Drawing door knob 
-    fill(228, 235, 33);
-    ellipse(width/((float)50/31), height/((float)100/79), width/25, height/25);
-
-  // Drawing chimney
-    fill(156, 98, 17);
-    rect(width/((float)100/21), height/((float)100/13), width/((float)20/3), height/((float)100/29));
-  
-  // Drawing roof
-    fill(156, 98, 17);
-    triangle(width/((float)100/11), height/((float)100/47), width/((float)100/51), height/((float)25/3), width/((float)100/91), height/((float)100/47));  
+  // Time
+    int s = second(); 
+    int m = minute(); 
+    int h = hour();  
+    //line(s, 0, s, 33);
+    //line(m, 33, m, 66);
+    //line(h, 66, h, 100);
   }
   
   // define other methods down here.
